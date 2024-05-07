@@ -19,10 +19,11 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long itemId;
 
+    private int quantity;
+
     @ManyToOne
     @JoinColumn(name = "product_id")
     private Product product;
-    private int quantity;
 
     @Override
     public String toString() {
@@ -32,5 +33,13 @@ public class Item {
     public Item(Product product, int amount) {
         this.product = product;
         this.quantity = amount;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public Product getProduct() {
+        return product;
     }
 }

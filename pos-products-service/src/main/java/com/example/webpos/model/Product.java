@@ -22,4 +22,8 @@ public class Product implements Serializable {
     private double price;
     private int quantity;
     private String img;
+
+    public double getPrice() {
+        return price;
+    }
 }

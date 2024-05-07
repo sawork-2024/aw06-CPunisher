@@ -232,9 +232,13 @@ components:
           type: string
         name:
           type: string
+        category:
+          type: string
         price:
           type: double
-        image:
+        quantity:
+          type: integer
+        img:
           type: string
     Products:
       type: array

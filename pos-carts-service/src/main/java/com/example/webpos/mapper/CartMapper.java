@@ -10,7 +10,7 @@ import org.openapitools.model.CartItemDto;
 import com.example.webpos.model.Cart;
 import com.example.webpos.model.Item;
 
-@Mapper
+@Mapper(uses = ProductMapper.class)
 public interface CartMapper {
     CartMapper INSTANCE = Mappers.getMapper(CartMapper.class);
 
