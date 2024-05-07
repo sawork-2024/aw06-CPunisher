@@ -20,10 +20,5 @@
       <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
       <version>4.1.1</version>
     </dependency>
-    <dependency>
-      <groupId>com.example</groupId>
-      <artifactId>pos-api</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-    </dependency>
   </dependencies>
 </project>
