@@ -15,6 +15,7 @@
         <module>pos-api</module>
         <module>pos-api-gateway</module>
         <module>pos-discovery-server</module>
+        <module>pos-counter-service</module>
         <module>pos-products-service</module>
         <module>pos-carts-service</module>
     </modules>
