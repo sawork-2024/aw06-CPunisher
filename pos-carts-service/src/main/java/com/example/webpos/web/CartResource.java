@@ -3,6 +3,7 @@ package com.example.webpos.web;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.mapstruct.factory.Mappers;
 import org.openapitools.model.CartDto;
 import org.openapitools.model.CartItemDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,7 @@ public class CartResource implements CartsApi {
     @Autowired
     private CartService cartService;
 
-    @Autowired
-    private CartMapper cartMapper;
+    private CartMapper cartMapper = Mappers.getMapper(CartMapper.class);
 
     @Override
     public ResponseEntity<CartDto> addCart(@Valid CartDto cartDto) {

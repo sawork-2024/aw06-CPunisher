@@ -3,6 +3,7 @@ package com.example.webpos.web;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.mapstruct.factory.Mappers;
 import org.openapitools.model.ProductDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,7 @@ public class ProductResource implements ProductsApi {
     @Autowired
     private ProductService productService;
 
-    @Autowired
-    private ProductMapper mapper;
+    private ProductMapper mapper = Mappers.getMapper(ProductMapper.class);
 
     @Override
     public ResponseEntity<List<ProductDto>> listProducts() {

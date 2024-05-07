@@ -3,6 +3,7 @@ package com.example.webpos.service;
 import java.util.Collection;
 import java.util.Optional;
 
+import org.mapstruct.factory.Mappers;
 import org.openapitools.model.CartDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -27,8 +28,7 @@ public class CartServiceImpl implements CartService {
     @LoadBalanced
     private RestTemplate restTemplate;
 
-    @Autowired
-    private CartMapper mapper;
+    private CartMapper mapper = Mappers.getMapper(CartMapper.class);
 
     private static final String COUNTER_URL = "http://COUNTER-SERVICE/counter";
 
