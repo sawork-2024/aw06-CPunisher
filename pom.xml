@@ -49,9 +49,9 @@
             <version>1.5.5.Final</version>
         </dependency>
         <dependency>
-            <groupId>com.example</groupId>
-            <artifactId>pos-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>org.openapitools</groupId>
+            <artifactId>openapi-generator</artifactId>
+            <version>7.4.0</version>
         </dependency>
     </dependencies>
 </project>

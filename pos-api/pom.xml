@@ -14,14 +14,6 @@
   <groupId>com.example</groupId>
   <artifactId>pos-api</artifactId>
 
-  <dependencies>
-    <dependency>
-      <groupId>org.openapitools</groupId>
-      <artifactId>openapi-generator</artifactId>
-      <version>7.4.0</version>
-    </dependency>
-  </dependencies>
-
   <build>
     <plugins>
       <plugin>
