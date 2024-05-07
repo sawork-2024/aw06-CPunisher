@@ -12,7 +12,7 @@
   </parent>
 
   <groupId>com.example</groupId>
-  <artifactId>pos-api-products-service</artifactId>
+  <artifactId>pos-products-service</artifactId>
 
   <dependencies>
     <dependency>
