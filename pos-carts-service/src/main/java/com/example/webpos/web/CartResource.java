@@ -3,7 +3,6 @@ package com.example.webpos.web;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.mapstruct.factory.Mappers;
 import org.openapitools.model.CartDto;
 import org.openapitools.model.CartItemDto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +24,9 @@ public class CartResource implements CartsApi {
     @Autowired
     private CartService cartService;
 
-    private CartMapper cartMapper = Mappers.getMapper(CartMapper.class);
-
     @Override
     public ResponseEntity<CartDto> addCart(@Valid CartDto cartDto) {
-        Cart cart = cartMapper.toCart(cartDto);
+        Cart cart = CartMapper.INSTANCE.toCart(cartDto);
         if (cart == null)
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         Cart resCart = cartService.addEmptyCart(cart);
@@ -43,11 +40,11 @@ public class CartResource implements CartsApi {
         Cart cart = cartService.getCartById(cartId);
         if (cart == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        Item item = cartMapper.toCartItem(cartItemDto);
+        Item item = CartMapper.INSTANCE.toCartItem(cartItemDto);
         Cart resCart = cartService.addItemToCart(cart, item);
         if (resCart == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        CartDto resCartDto = cartMapper.toCartDto(resCart);
+        CartDto resCartDto = CartMapper.INSTANCE.toCartDto(resCart);
         return new ResponseEntity<>(resCartDto, HttpStatus.OK);
     }
 
@@ -56,7 +53,7 @@ public class CartResource implements CartsApi {
         Cart cart = cartService.getCartById(cartId);
         if (cart == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        CartDto cartDto = cartMapper.toCartDto(cart);
+        CartDto cartDto = CartMapper.INSTANCE.toCartDto(cart);
         return new ResponseEntity<>(cartDto, HttpStatus.OK);
     }
 
@@ -70,7 +67,7 @@ public class CartResource implements CartsApi {
 
     @Override
     public ResponseEntity<List<CartDto>> listCarts() {
-        List<CartDto> carts = new ArrayList<>(cartMapper.toCartDtos(cartService.getAllCarts()));
+        List<CartDto> carts = new ArrayList<>(CartMapper.INSTANCE.toCartDtos(cartService.getAllCarts()));
         if (carts.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
