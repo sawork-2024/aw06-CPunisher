@@ -1,6 +1,20 @@
 spring:
   application:
     name: carts-service
+  datasource:
+    url: jdbc:h2:mem:pos
+    driverClassName: org.h2.Driver
+    data: classpath:data.sql
+  h2:
+    console:
+      enabled: true
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    defer-datasource-initialization: true
 
 server:
   port: 0

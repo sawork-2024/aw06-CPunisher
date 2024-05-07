@@ -30,7 +30,7 @@ public class CartServiceImpl implements CartService {
     @Autowired
     private CartMapper mapper;
 
-    private static final String COUNTER_URL = "http://POS-COUNTER-SERVICE/counter";
+    private static final String COUNTER_URL = "http://COUNTER-SERVICE/counter";
 
     @Override
     public double checkout(Integer cartId) {
