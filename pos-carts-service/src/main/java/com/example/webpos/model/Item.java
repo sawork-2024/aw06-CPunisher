@@ -7,10 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
 @NoArgsConstructor
 @Entity
 @Table(name = "items")
@@ -35,11 +33,28 @@ public class Item {
         this.quantity = amount;
     }
 
+    public Long getItemId() {
+        return itemId;
+    }
+
+    public void setItemId(Long itemId) {
+        this.itemId = itemId;
+    }
+
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public Product getProduct() {
         return product;
     }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
 }
